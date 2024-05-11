@@ -11,6 +11,7 @@
 		B9346FD72BEF857500FA1D4F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9346FD62BEF857500FA1D4F /* ContentView.swift */; };
 		B9346FD92BEF857600FA1D4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9346FD82BEF857600FA1D4F /* Assets.xcassets */; };
 		B9346FDC2BEF857600FA1D4F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9346FDB2BEF857600FA1D4F /* Preview Assets.xcassets */; };
+		B9346FE32BEF859F00FA1D4F /* TetradGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9346FE22BEF859F00FA1D4F /* TetradGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		B9346FD62BEF857500FA1D4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B9346FD82BEF857600FA1D4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9346FDB2BEF857600FA1D4F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B9346FE22BEF859F00FA1D4F /* TetradGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetradGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				B9346FD42BEF857500FA1D4F /* ToneBarrierDurationGeneratorApp.swift */,
 				B9346FD62BEF857500FA1D4F /* ContentView.swift */,
+				B9346FE22BEF859F00FA1D4F /* TetradGenerator.swift */,
 				B9346FD82BEF857600FA1D4F /* Assets.xcassets */,
 				B9346FDA2BEF857600FA1D4F /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				B9346FD72BEF857500FA1D4F /* ContentView.swift in Sources */,
 				B9346FD52BEF857500FA1D4F /* ToneBarrierDurationGeneratorApp.swift in Sources */,
+				B9346FE32BEF859F00FA1D4F /* TetradGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
