@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		B9346FD12BEF857500FA1D4F /* ToneBarrierDurationGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToneBarrierDurationGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9346FD42BEF857500FA1D4F /* ToneBarrierDurationGeneratorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToneBarrierDurationGeneratorApp.swift; sourceTree = "<group>"; };
-		B9346FD62BEF857500FA1D4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B9346FD62BEF857500FA1D4F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		B9346FD82BEF857600FA1D4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9346FDB2BEF857600FA1D4F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B9346FE22BEF859F00FA1D4F /* TetradGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TetradGenerator.swift; sourceTree = "<group>"; };

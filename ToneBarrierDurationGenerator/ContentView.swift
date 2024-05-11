@@ -16,7 +16,7 @@ struct ContentView: View {
     let timer = Timer.publish(every: 2, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, content: {
             if tetrad.dyads.isEmpty {
                 Text("Generating Tetrad...")
                     .onAppear {
@@ -24,28 +24,43 @@ struct ContentView: View {
                     }
             } else {
                 tetradView(tetrad)
-                Text("Difference between first tones of Dyad 1 and Dyad 2: \(durationDifference, specifier: "%.4f") seconds")
-                    .padding()
-                Text("Sum of first tones in both Harmonies of Dyad 1: \(sumFirstTonesHarmoniesDyad1, specifier: "%.4f") seconds")
-                    .padding()
-                Text("Sum of first tones in both Harmonies of Dyad 2: \(sumFirstTonesHarmoniesDyad2, specifier: "%.4f") seconds")
-                    .padding()
+                Group {
+                    Text("Metrics:")
+                        .font(.caption).fontWeight(.bold).dynamicTypeSize(.small).scaledToFit()
+                        .padding(.bottom)
+                    Text("\t  Dyad[0] Harmony[0] Tone[0]\n\t- Dyad[1] Harmony[0] Tone[0]\n\t  --------------------------\n\t  \(durationDifference, specifier: "%.4f") seconds")
+                        .padding(.bottom)
+                    Text("\t  Dyad[0] Harmony[0] Tone[0]\n\t+ Dyad[0] Harmony[1] Tone[0]\n\t  --------------------------\n\t  \(sumFirstTonesHarmoniesDyad1, specifier: "%.4f") sec")
+                        .padding(.bottom)
+                    Text("\t  Dyad[1] Harmony[0] Tone[0]\n\t+ Dyad[1] Harmony[1] Tone[0]\n\t  --------------------------\n\t  \(sumFirstTonesHarmoniesDyad2, specifier: "%.4f") sec")
+                }
+                .font(.caption).monospaced().fontWeight(.light).dynamicTypeSize(.small).scaledToFit()
+                
             }
-        }
+        })
         .onReceive(timer) { _ in
             updateTetrad()
         }
+        .frame(width: .infinity)
     }
     
     @ViewBuilder
     private func tetradView(_ tetrad: Tetrad) -> some View {
-        ForEach(Array(tetrad.dyads.enumerated()), id: \.offset) { index, dyad in
-            Text("Dyad \(index + 1):")
-                .bold()
-            ForEach(Array(dyad.harmonies.enumerated()), id: \.offset) { harmonyIndex, harmony in
-                Text("  Harmony \(harmonyIndex + 1): Tone Durations = \(harmony.tones.map { $0.duration }) seconds")
+        Group {
+            ForEach(Array(tetrad.dyads.enumerated()), id: \.offset) { index, dyad in
+                Text("Dyad \(index + 1):")
+                    .font(.caption).fontWeight(.bold).dynamicTypeSize(.small).scaledToFit()
+                    .padding(.bottom)
+                
+                Group {
+                    ForEach(Array(dyad.harmonies.enumerated()), id: \.offset) { harmonyIndex, harmony in
+                        Text("\tHarmony \(harmonyIndex + 1): Tone Durations:\t\(harmony.tones.map { $0.duration }) seconds")
+                    }
+                }
+                .font(.caption).monospaced().fontWeight(.light).dynamicTypeSize(.small).scaledToFit()
             }
         }
+        .padding(.bottom)
     }
     
     private func updateTetrad() {
@@ -62,5 +77,11 @@ struct ContentView: View {
         (tetrad.dyads.first?.harmonies.last?.tones.first?.duration ?? 0.0)
         sumFirstTonesHarmoniesDyad2 = (tetrad.dyads.last?.harmonies.first?.tones.first?.duration ?? 0.0) +
         (tetrad.dyads.last?.harmonies.last?.tones.first?.duration ?? 0.0)
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
